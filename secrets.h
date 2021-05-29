@@ -1,0 +1,10 @@
+//WIFI
+#define SECRET_SSID "YOUR-SSID"
+#define SECRET_PASS "YOUR-PASSWORD"
+
+//MQTT Broker
+#define MQTT_HOST "MQTT-HOST"
+#define MQTT_CLIENT_ID ""
+#define MQTT_USERNAME ""
+#define MQTT_PASSWORD ""
+#define MQTT_TOPIC_NAME "YOUR-TOPIC"
