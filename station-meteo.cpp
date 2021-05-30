@@ -61,7 +61,7 @@ float p10,p25;
 SDS011 my_sds;
 
 //MH-Z19
-unsigned long durationHigh, durationLow;
+unsigned long duration;
 
 void setup() {
   
@@ -135,8 +135,8 @@ void loop() {
   float ppm = gasSensor.getCorrectedPPM(temperature,humidity);   
   ******/
   //MH-Z19
-  durationHigh = pulseIn(MH_Z19_PWM, HIGH);
-  float ppm = getPPM(durationHigh);
+  duration = pulseIn(MH_Z19_PWM, HIGH, 2008000);
+  float ppm = getPPM(duration);
   
   mqttClient.poll();
   
@@ -181,7 +181,7 @@ void loop() {
   Serial.print("CO2: ");
   Serial.println(ppm);
   Serial.print("Duration MH-Z19: ");
-  Serial.println(durationHigh);
+  Serial.println(duration);
  
   //SDS011 Protection
   my_sds.sleep();
